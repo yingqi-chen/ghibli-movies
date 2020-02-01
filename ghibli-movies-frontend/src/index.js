@@ -4,9 +4,6 @@ const cardArea = document.getElementById("card-area")
 
 document.addEventListener("DOMContentLoaded", ()=>{
   fetchMovies()
-  let img = document.createElement("img")
-  img.setAttribute("src", "./src/images/kiki.jpeg")
-  document.body.append(img)
 });
 
   function fetchMovies(){
@@ -21,21 +18,31 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   function addMovietoPage(movie){
-    let div = document.createElement('div')
-    div.setAttribute("id", movie.title)
-    div.setAttribute("class","movie-card")
+    let divCard = document.createElement('div')
+    divCard.setAttribute("id", movie.title)
+    divCard.setAttribute("class","movie-card")
+
+    
+    let h2 =  document.createElement('h2')
+    h2.innerText = `Title: ${movie.title}`
 
     let p = document.createElement('p')
-    p.innerHTML = `
-    <h2>Title: ${movie.title}</h2>
-    <p>Rotten Tomato Score: ${movie.rt_score}<p>
-    <p>Release year: ${movie.release_year}<p>
-    <p>Director: ${movie.director.name}<p>
+    p.innerText = 
+    `Rotten Tomato Score: ${movie.rt_score}
+    Release year: ${movie.release_year}
+    Director: ${movie.director.name}
+    Description: ${movie.description}`
+
+   
+    let divForImg = document.createElement("div")
+    divForImg.setAttribute("class","images")
+    let img = document.createElement('img')
+    img.setAttribute("src", `./src/images/${movie.image}`)
+    divForImg.append(img)
     
-    <em>Description: ${movie.description}</br>
-    <div class = "imgs"><img src="./src/images/${movie.image}"/></div>`
     
-    div.append(p)
-    cardArea.append(div)
+    
+    divCard.append(h2,p,divForImg)
+    cardArea.append(divCard)
   }
 
