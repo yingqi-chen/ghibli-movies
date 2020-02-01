@@ -4,6 +4,9 @@ const cardArea = document.getElementById("card-area")
 
 document.addEventListener("DOMContentLoaded", ()=>{
   fetchMovies()
+  let img = document.createElement("img")
+  img.setAttribute("src", "./src/images/kiki.jpeg")
+  document.body.append(img)
 });
 
   function fetchMovies(){
@@ -30,14 +33,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     <p>Director: ${movie.director.name}<p>
     
     <em>Description: ${movie.description}</br>
-    <img src="https://m.media-amazon.com/images/M/MV5BNTg0NmI1ZGQtZTUxNC00NTgxLThjMDUtZmRlYmEzM2MwOWYwXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_UY268_CR2,0,182,268_AL_.jpg" />
+    <div class = "imgs"><img src="./src/images/${movie.image}"/></div>`
     
-    
-    
-    
-    `
-    
-
     div.append(p)
     cardArea.append(div)
   }
