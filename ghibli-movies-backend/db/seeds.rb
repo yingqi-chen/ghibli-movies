@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 director_a = Director.create(
     "name"=> "Hayao Miyazaki",
-    "introduction" => "Hayao Miyazaki is a Japanese animator, filmmaker, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, a film and animation studio, he has attained international acclaim as a masterful storyteller and as a maker of animated feature films, and is widely regarded as one of the most accomplished filmmakers in the animation business." 
+    "introduction" => "Hayao Miyazaki is a Japanese animator, filmmaker, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, a film and animation studio, he has attained international acclaim as a masterful storyteller and as a maker of animated feature films, and is widely regarded as one of the most accomplished filmmakers in the animation business.", 
     "image" => "hayao_miyazaki.jpg"
     )
 director_b = Director.create(
-    "name"=> "Isao Takahata"
-    "introduction" =>"Isao Takahata was a Japanese film director, screenwriter and producer. In 1985, he co-founded Studio Ghibli with his long-time collaborative partner Hayao Miyazaki and Miyazaki's collaborators Toshio Suzuki and Yasuyoshi Tokuma. Takahata earned international critical acclaim for his work as a director of anime films, among them Grave of the Fireflies (1988), Only Yesterday (1991), Pom Poko (1994), and My Neighbors the Yamadas (1999). His last film as director was The Tale of the Princess Kaguya (2013), which was nominated for an Oscar in the category of Best Animated Feature Film at the 87th Academy Awards."
+    "name"=> "Isao Takahata",
+    "introduction" =>"Isao Takahata was a Japanese film director, screenwriter and producer. In 1985, he co-founded Studio Ghibli with his long-time collaborative partner Hayao Miyazaki and Miyazaki's collaborators Toshio Suzuki and Yasuyoshi Tokuma. Takahata earned international critical acclaim for his work as a director of anime films. ",
     "image"=> "isao_takahata.jpg"
     )
 director_c = Director.create(
     "name"=> "Yoshifumi Kondō",
-    "introduction" =>"Yoshifumi Kondō was a Japanese animator who worked for Studio Ghibli in his last years. He worked as an animation director on Anne of Green Gables, Sherlock Hound, Kiki's Delivery Service, Only Yesterday and Princess Mononoke. Kondō directed the animated film Whisper of the Heart, and was expected to become one of the top directors at Studio Ghibli, alongside Hayao Miyazaki and Isao Takahata, and to become their eventual successor."
+    "introduction" =>"Yoshifumi Kondō was a Japanese animator who worked for Studio Ghibli in his last years. He worked as an animation director on Anne of Green Gables, Sherlock Hound, Kiki's Delivery Service, Only Yesterday and Princess Mononoke. Kondō directed the animated film Whisper of the Heart, and was expected to become one of the top directors at Studio Ghibli, alongside Hayao Miyazaki and Isao Takahata, and to become their eventual successor.",
     "image"=>"yoshifumi_kondou.jpg"
     )
 
@@ -104,18 +104,18 @@ movie_i = Movie.create(
 character_a = Character.create(
     "name"=> "Princess Sheeta",
     "introduction"=> "Sheeta is the rightful princess of Laputa. She possesses an Aetherium crystal, which can save her in times of danger. Possessing the Aetherium crystal, she is chased down by the Dola gang, Muska and the military. Muska manages to capture her and take her into custody aboard the civilian passenger airship Saturn.",
-    "movie_id"=> movie_a.id
+    "movie_id"=> movie_a.id,
     "image" =>"sheeta.jpg"
     )
 character_b = Character.create(
     "name"=> "Ashitaka",
-    "introductions"=> "Ashitaka is the main protagonist in the 1997 Studio Ghibli film Princess Mononoke. He is the prince of an Emishi village who, after being cursed by a demon boar, travels to the west to seek a cure and prevent his curse from falling onto another.",
+    "introduction"=> "Ashitaka is the main protagonist in the 1997 Studio Ghibli film Princess Mononoke. He is the prince of an Emishi village who, after being cursed by a demon boar, travels to the west to seek a cure and prevent his curse from falling onto another.",
     "movie_id"=> movie_i.id,
     "image" =>"ashitaka.jpg"
 )
 character_c = Character.create(
     "name"=> "Shizuku Tsukishima",
-    "image" =>"shizuku_tsukishima.jpg"
+    "image" =>"shizuku_tsukishima.jpg",
     "movie_id"=> movie_h.id,
     "introduction" => "Shizuku Tsukishima is the protagonist of Whisper of the Heart. Shizuku attends the local Junior High School and is currently sitting tests to get into High School. She loves reading."
 )
@@ -154,7 +154,7 @@ character_h = Character.create(
 
 character_i = Character.create(
     "name"=> "Inugami Gyobu",
-    "introduction"=> "Inugami Gyobu was a leader of Raccoons Dogs. He passes away due to a heart attack amidst the Monster Festival. He is one of Shikoku's Wise Men, who leads 800 tanukis. He is worship by humans in Iyo (today Ehime Prefecture)[1]"
+    "introduction"=> "Inugami Gyobu was a leader of Raccoons Dogs. He passes away due to a heart attack amidst the Monster Festival. He is one of Shikoku's Wise Men, who leads 800 tanukis.",
     "movie_id"=> movie_g.id,
     "image" => "inugami.jpg"
 )

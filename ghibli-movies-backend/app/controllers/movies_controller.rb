@@ -4,8 +4,8 @@ class MoviesController < ApplicationController
         movies = Movie.all
         render json: movies.to_json(
             :include => {
-                :characters =>{ :only => [:name, :species] },
-                :director =>{ :only =>[:name]}
+                :characters =>{ :except => [:created_at, :updated_at] },
+                :director =>{ :except => [:created_at, :updated_at]}
         },   :except =>[:director_id, :created_at, :updated_at]
         )
     end
@@ -14,9 +14,6 @@ class MoviesController < ApplicationController
     end
 
     def create
-    end
-
-    def update
     end
 
 end
