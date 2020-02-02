@@ -6,8 +6,19 @@ h1 {
     font-size:500%;
 }
 
+#ghibli-video {
+    border: 1px white;
+}
+
 #card-area {
     padding-left: 7%;
+}
+
+body {
+    background-image: url("./src/images/sakura.jpg");
+    background-repeat: repeat-y;
+    background-color: transparent;
+
 }
 
 
@@ -28,7 +39,7 @@ img {
 
 .movie-info {
     width: 400px;
-    background-color: salmon;
+    /* background-color: rgb(107, 146, 207); */
     overflow: auto; 
     float: left;   
 }

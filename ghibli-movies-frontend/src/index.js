@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     
     let h2 =  document.createElement('h2')
-    h2.innerText = `Title: ${movie.title}`
+    h2.innerText = movie.title
 
     let divCollect = document.createElement("div")
 
