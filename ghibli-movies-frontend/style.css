@@ -1,8 +1,43 @@
-h2 {
-  color: red
+h1, #ghibli-video {
+  text-align: center;
 }
 
-img {
-   width: 325px;
-   height: 512px   
+h1 {
+    font-size:500%;
+}
+
+#card-area {
+    padding-left: 7%;
+}
+
+
+
+img { 
+   width: 400px;
+   height: 600px;
+   display: inline-block; 
+   
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.movie-info {
+    width: 400px;
+    background-color: salmon;
+    overflow: auto; 
+    float: left;   
+}
+
+.movie-card {
+    display: inline-flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }

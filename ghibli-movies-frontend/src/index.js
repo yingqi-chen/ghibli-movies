@@ -26,23 +26,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let h2 =  document.createElement('h2')
     h2.innerText = `Title: ${movie.title}`
 
-    let p = document.createElement('p')
-    p.innerText = 
-    `Rotten Tomato Score: ${movie.rt_score}
-    Release year: ${movie.release_year}
-    Director: ${movie.director.name}
-    Description: ${movie.description}`
+    let divCollect = document.createElement("div")
 
-   
     let divForImg = document.createElement("div")
     divForImg.setAttribute("class","images")
     let img = document.createElement('img')
     img.setAttribute("src", `./src/images/${movie.image}`)
     divForImg.append(img)
-    
-    
-    
-    divCard.append(h2,p,divForImg)
+
+    let p = document.createElement('p')
+    p.setAttribute("class","movie-info")
+    p.innerHTML = 
+    `<strong>Rotten Tomato Score</strong>:  ${movie.rt_score}<br>
+    <strong>Release year</strong>:  ${movie.release_year}<br>
+    <strong>Director</strong>:  ${movie.director.name}<br>
+    <strong>Description</strong>:  ${movie.description}<br>`
+
+    divCard.append(h2,divForImg,p)
     cardArea.append(divCard)
   }
 
