@@ -6,9 +6,6 @@ h1 {
     font-size:500%;
 }
 
-#ghibli-video {
-    border: 1px white;
-}
 
 #card-area {
     padding-left: 7%;
@@ -20,8 +17,6 @@ body {
     background-color: transparent;
 
 }
-
-
 
 img { 
    width: 400px;

@@ -5,9 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-director_a = Director.create(name: "Hayao Miyazaki" )
-director_b = Director.create(name: "Isao Takahata")
-director_c = Director.create(name: "Yoshifumi Kondō")
+director_a = Director.create(
+    "name"=> "Hayao Miyazaki",
+    "introduction" => "Hayao Miyazaki is a Japanese animator, filmmaker, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, a film and animation studio, he has attained international acclaim as a masterful storyteller and as a maker of animated feature films, and is widely regarded as one of the most accomplished filmmakers in the animation business." 
+    "image" => "hayao_miyazaki.jpg"
+    )
+director_b = Director.create(
+    "name"=> "Isao Takahata"
+    "introduction" =>"Isao Takahata was a Japanese film director, screenwriter and producer. In 1985, he co-founded Studio Ghibli with his long-time collaborative partner Hayao Miyazaki and Miyazaki's collaborators Toshio Suzuki and Yasuyoshi Tokuma. Takahata earned international critical acclaim for his work as a director of anime films, among them Grave of the Fireflies (1988), Only Yesterday (1991), Pom Poko (1994), and My Neighbors the Yamadas (1999). His last film as director was The Tale of the Princess Kaguya (2013), which was nominated for an Oscar in the category of Best Animated Feature Film at the 87th Academy Awards."
+    "image"=> "isao_takahata.jpg"
+    )
+director_c = Director.create(
+    "name"=> "Yoshifumi Kondō",
+    "introduction" =>"Yoshifumi Kondō was a Japanese animator who worked for Studio Ghibli in his last years. He worked as an animation director on Anne of Green Gables, Sherlock Hound, Kiki's Delivery Service, Only Yesterday and Princess Mononoke. Kondō directed the animated film Whisper of the Heart, and was expected to become one of the top directors at Studio Ghibli, alongside Hayao Miyazaki and Isao Takahata, and to become their eventual successor."
+    "image"=>"yoshifumi_kondou.jpg"
+    )
 
 movie_a = Movie.create(title: "Castle in the Sky",
 "description"=> "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
@@ -90,40 +102,63 @@ movie_i = Movie.create(
 )
 
 character_a = Character.create(
-    "name"=> "Colonel Muska",
-    "species"=> "Human",
+    "name"=> "Princess Sheeta",
+    "introduction"=> "Sheeta is the rightful princess of Laputa. She possesses an Aetherium crystal, which can save her in times of danger. Possessing the Aetherium crystal, she is chased down by the Dola gang, Muska and the military. Muska manages to capture her and take her into custody aboard the civilian passenger airship Saturn.",
     "movie_id"=> movie_a.id
+    "image" =>"sheeta.jpg"
     )
 character_b = Character.create(
     "name"=> "Ashitaka",
-    "species"=> "Human",
-    "movie_id"=> movie_i.id
+    "introductions"=> "Ashitaka is the main protagonist in the 1997 Studio Ghibli film Princess Mononoke. He is the prince of an Emishi village who, after being cursed by a demon boar, travels to the west to seek a cure and prevent his curse from falling onto another.",
+    "movie_id"=> movie_i.id,
+    "image" =>"ashitaka.jpg"
 )
 character_c = Character.create(
-    "name"=> "San",
-    "species"=> "Human",
-    "movie_id"=> movie_i.id
+    "name"=> "Shizuku Tsukishima",
+    "image" =>"shizuku_tsukishima.jpg"
+    "movie_id"=> movie_h.id,
+    "introduction" => "Shizuku Tsukishima is the protagonist of Whisper of the Heart. Shizuku attends the local Junior High School and is currently sitting tests to get into High School. She loves reading."
 )
 character_d = Character.create(
-    "name"=> "Jiji",
-    "species"=> "Cat",
-    "movie_id"=> movie_d.id
+    "name"=> "Kiki",
+    "introduction"=> "Kiki also known as Kiki the Witch is a fictional 13-year-old female witch. Kiki is upbeat, outspoken, a little naive, independent, responsible and enterprising when she goes on an adventure.",
+    "movie_id"=> movie_d.id,
+    "image" =>"kiki.jpg"
 
 )
 character_e = Character.create(
-    "name"=> "Satsuki Kusakabe",
-    "species"=> "Human",
-    "movie_id"=> movie_c.id
+    "name"=> "Taeko Okajima",
+    "introduction"=> "Taeko is 27, unmarried and has lived her whole life in Tokyo, currently holding a position with a company there. She decides to take a 10 day vacation to visit her elder sister’s in-laws at their rural countryside farm to help with the safflower harvest and get away from city life. ",
+    "movie_id"=> movie_e.id,
+    "image" =>"taekp.jpg"
 )
 character_f = Character.create(
-    "name"=> "Mei Kusakabe",
-    "species"=> "Human",
-    "movie_id"=> movie_c.id
+    "name"=> "Setsuko Yokokawa",
+    "introduction"=> "Setsuko Yokokawa is a preschool student and the younger sister of Seita Yokokawa in the Studio Ghibli movie Grave of the Fireflies. She was born in 1941, but later dies in 1945 towards the end of the film.",
+    "movie_id"=> movie_b.id,
+    "image" => "setsuko.jpg"
 )
 character_g = Character.create(
     "name"=> "Totoro",
-    "species"=> "Totoro",
-    "movie_id"=> movie_c.id
+    "introduction"=> "Totoro is the title tetartagonist and forest spirit that lives in the largest camphor tree in a small village. ",
+    "movie_id"=> movie_c.id,
+    "image" => "totoro.jpg"
 )
+
+character_h = Character.create(
+    "name"=> "Marco Pagot",
+    "introduction"=> "Marco Pagot is the protagonist in the movie Porco Rosso. He is a human who was transformed into a pig. He is known as Porco Rosso, the bounty hunter.",
+    "movie_id"=> movie_f.id,
+    "image" => "marco.jpg"
+)
+
+character_i = Character.create(
+    "name"=> "Inugami Gyobu",
+    "introduction"=> "Inugami Gyobu was a leader of Raccoons Dogs. He passes away due to a heart attack amidst the Monster Festival. He is one of Shikoku's Wise Men, who leads 800 tanukis. He is worship by humans in Iyo (today Ehime Prefecture)[1]"
+    "movie_id"=> movie_g.id,
+    "image" => "inugami.jpg"
+)
+
+
 
 

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let divForImg = document.createElement("div")
     divForImg.setAttribute("class","images")
     let img = document.createElement('img')
-    img.setAttribute("src", `./src/images/${movie.image}`)
+    img.setAttribute("src", `./src/images/movies/${movie.image}`)
     divForImg.append(img)
 
     let p = document.createElement('p')
