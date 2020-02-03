@@ -2,6 +2,65 @@ const BACKEND_URL = "http://localhost:3000";
 const cardArea = document.getElementById("card-area")
 
 
+class Movie{
+  constructor(movie){
+    this.title = movie.title
+    this.description = movie.description
+    this.rt_score = movie.rt_score
+    this.image = movie.image
+    this.release_year = movie.release_year
+    this.director = new Director(movie.director)
+    this.characters = movie.characters.map(c=>new Character(c))
+  }
+
+   addMovietoPage(){
+    let divCard = document.createElement('div')
+    divCard.setAttribute("id", this.title)
+    divCard.setAttribute("class","movie-card")
+
+    
+    let h2 =  document.createElement('h2')
+    h2.innerText = this.title
+
+    let divCollect = document.createElement("div")
+
+    let divForImg = document.createElement("div")
+    divForImg.setAttribute("class","images")
+    let img = document.createElement('img')
+    img.setAttribute("src", `./src/images/movies/${this.image}`)
+    divForImg.append(img)
+
+    let p = document.createElement('p')
+    p.setAttribute("class","movie-info")
+    p.innerHTML = 
+    `<strong>Rotten Tomato Score</strong>:  ${this.rt_score}<br>
+    <strong>Release year</strong>:  ${this.release_year}<br>
+    <strong>Director</strong>:  ${this.director.name}<br>
+    <strong>Description</strong>:  ${this.description}<br>`
+
+    divCard.append(h2,divForImg,p)
+    cardArea.append(divCard)
+  }
+}
+
+
+class Director{
+  constructor(director){
+    this.name = director.name
+    this.introduction = director.introduction
+    this.image = director.image
+  }
+}
+
+class Character{
+  constructor(character){
+    this.name = character.name
+    this.image = character.image
+    this.introduction = character.introduction
+  }
+}
+
+
 document.addEventListener("DOMContentLoaded", ()=>{
   fetchMovies()
 });
@@ -11,38 +70,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     .then(response => response.json())
     .then(json => {
       for (movie of json){
-        addMovietoPage(movie)
+        let mObject = new Movie(movie);
+        mObject.addMovietoPage()
       } 
     }   
       );
   }
 
-  function addMovietoPage(movie){
-    let divCard = document.createElement('div')
-    divCard.setAttribute("id", movie.title)
-    divCard.setAttribute("class","movie-card")
+ 
 
-    
-    let h2 =  document.createElement('h2')
-    h2.innerText = movie.title
-
-    let divCollect = document.createElement("div")
-
-    let divForImg = document.createElement("div")
-    divForImg.setAttribute("class","images")
-    let img = document.createElement('img')
-    img.setAttribute("src", `./src/images/movies/${movie.image}`)
-    divForImg.append(img)
-
-    let p = document.createElement('p')
-    p.setAttribute("class","movie-info")
-    p.innerHTML = 
-    `<strong>Rotten Tomato Score</strong>:  ${movie.rt_score}<br>
-    <strong>Release year</strong>:  ${movie.release_year}<br>
-    <strong>Director</strong>:  ${movie.director.name}<br>
-    <strong>Description</strong>:  ${movie.description}<br>`
-
-    divCard.append(h2,divForImg,p)
-    cardArea.append(divCard)
-  }
+  
 
