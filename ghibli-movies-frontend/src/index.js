@@ -22,25 +22,55 @@ class Movie{
     let h2 =  document.createElement('h2')
     h2.innerText = this.title
 
-    let divCollect = document.createElement("div")
 
     let divForImg = document.createElement("div")
     divForImg.setAttribute("class","images")
     let img = document.createElement('img')
     img.setAttribute("src", `./src/images/movies/${this.image}`)
     divForImg.append(img)
+    
 
+
+    let infoCollect = document.createElement('div')
+    infoCollect.setAttribute("class","movie-info")
+    
     let p = document.createElement('p')
-    p.setAttribute("class","movie-info")
     p.innerHTML = 
     `<strong>Rotten Tomato Score</strong>:  ${this.rt_score}<br>
     <strong>Release year</strong>:  ${this.release_year}<br>
-    <strong>Director</strong>:  ${this.director.name}<br>
     <strong>Description</strong>:  ${this.description}<br>`
 
-    divCard.append(h2,divForImg,p)
+    this.addDirectorTotheBlock(infoCollect)
+
+    infoCollect.append(p)
+
+
+    divCard.append(h2,divForImg,infoCollect)
     cardArea.append(divCard)
+
+
   }
+
+  addDirectorTotheBlock(infoCollect){
+
+    let divForDirector = document.createElement('div')
+    divForDirector.setAttribute('class',"tooltip")
+    divForDirector.innerHTML = `<strong>Director</strong>:  ${this.director.name}<br>`
+
+    let pForDirector = document.createElement('p')
+    pForDirector.setAttribute("class", "tooltiptext")
+    pForDirector.innerText = this.director.introduction
+
+    let imgForDirector = document.createElement('img')
+    imgForDirector.setAttribute('src', `./src/images/directors/${this.director.image}`)
+
+
+    divForDirector.append(pForDirector,imgForDirector)
+
+    infoCollect.append(divForDirector)
+  }
+
+
 }
 
 
