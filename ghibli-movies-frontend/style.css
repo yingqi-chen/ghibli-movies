@@ -48,19 +48,69 @@ img {
     margin-top: 30px;
 }
 
-.tooltip {
+/* .director-card {
     position: relative;
     z-index: 20;
     overflow: visible;
+} */
+
+/* .tooltip .tooltiptext{
+    display: none;
+} */
+
+
+
+
+
+/* 
+
+ */
+
+.director-block .tooltip{
+    display: none;
+    position: relative;
 }
 
 p {
-  display: inline;
+    display: inline;
+  }
+
+
+.director-block:hover .tooltip{
+    z-index: 21;
+    background-color: cornflowerblue;
+     opacity: 0.8;
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     border: 3px solid black;
+  }
+
+.director-block:hover .tooltip p.tooltiptext{
+    visibility: visible;
+    width: 100%;
+    height: auto;
+    margin-right: 1px;
 }
 
-.tooltip .tooltiptext {
-    display: none;
+.tooltip img.tooltiptext{
+    position: relative;
+    top: 7%;
+    left: 5%;
+    width:80%;
+    height: auto;
+    border: 1px solid black;
 }
+
+
+
+
+
+
+
+
+
+/* 
+
 
 .tooltip:hover {
     z-index: 21;
@@ -68,15 +118,32 @@ p {
 }
 
 .tooltip:hover .tooltiptext {
-    display: block;
-    width: 300px;
+    width: 400px;
     padding: 1%;
-    background-color: yellow;
+    /* background-color: yellow; 
     position: absolute;
     left: 10px;
     top: -2px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
     
 }
+
+.tooltip:hover p.tooltiptext{
+ 
+
+
+
+.tooltip:hover img.tooltiptext {
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    
+} */
+
+
+
+
 
 /* .tooltip:hover {
   visibility: visible; 

@@ -54,18 +54,26 @@ class Movie{
   addDirectorTotheBlock(infoCollect){
 
     let divForDirector = document.createElement('div')
-    divForDirector.setAttribute('class',"tooltip")
+    divForDirector.setAttribute('class',"director-block")
     divForDirector.innerHTML = `<strong>Director</strong>:  ${this.director.name}<br>`
+    divForDirector.style.textDecoration = "underline dotted"
+  
+    
+    let divForTooltip = document.createElement('div')
+    divForTooltip.setAttribute('class',"tooltip")
 
     let pForDirector = document.createElement('p')
     pForDirector.setAttribute("class", "tooltiptext")
     pForDirector.innerText = this.director.introduction
 
     let imgForDirector = document.createElement('img')
+    imgForDirector.setAttribute("class", "tooltiptext")
     imgForDirector.setAttribute('src', `./src/images/directors/${this.director.image}`)
 
+ 
+    divForTooltip.append(imgForDirector,pForDirector)
 
-    divForDirector.append(pForDirector,imgForDirector)
+    divForDirector.append(divForTooltip)
 
     infoCollect.append(divForDirector)
   }
