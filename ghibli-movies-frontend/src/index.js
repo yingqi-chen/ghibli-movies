@@ -29,30 +29,27 @@ class Movie{
     img.setAttribute("src", `./src/images/movies/${this.image}`)
     divForImg.append(img)
     
-
     let infoCollect = document.createElement('div')
     infoCollect.setAttribute("class","movie-info")
-    
-    let p = document.createElement('p')
-    p.innerHTML = 
+    this.addInfoCollect(infoCollect)
+
+    divCard.append(h2,divForImg,infoCollect)
+    cardArea.append(divCard)
+
+  }
+
+  addInfoCollect(infoCollect){
+  
+    let pForInfo = document.createElement('p')
+    pForInfo.innerHTML = 
     `<strong>Rotten Tomato Score</strong>:  ${this.rt_score}<br>
     <strong>Release year</strong>:  ${this.release_year}<br>
     <strong>Description</strong>:  ${this.description}<br>`
 
     this.director.addDirectorTotheBlock(infoCollect)
-    infoCollect.append(p)
+    infoCollect.append(pForInfo)
     Character.addCharactersTotheBlock(infoCollect,this.characters)
-
-
-    divCard.append(h2,divForImg,infoCollect)
-    cardArea.append(divCard)
-
-
   }
-
-
-
-
 }
 
 
