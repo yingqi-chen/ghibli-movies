@@ -34,7 +34,6 @@ img {
 
 .movie-info {
     width: 400px;
-    /* background-color: rgb(107, 146, 207); */
     overflow: auto; 
     float: left;   
 }
@@ -48,23 +47,6 @@ img {
     margin-top: 30px;
 }
 
-/* .director-card {
-    position: relative;
-    z-index: 20;
-    overflow: visible;
-} */
-
-/* .tooltip .tooltiptext{
-    display: none;
-} */
-
-
-
-
-
-/* 
-
- */
 
 .director-block .tooltip{
     display: none;
@@ -102,88 +84,3 @@ p {
 }
 
 
-
-
-
-
-
-
-
-/* 
-
-
-.tooltip:hover {
-    z-index: 21;
-    overflow: visible;
-}
-
-.tooltip:hover .tooltiptext {
-    width: 400px;
-    padding: 1%;
-    /* background-color: yellow; 
-    position: absolute;
-    left: 10px;
-    top: -2px;
-    display: grid;
-    grid-template: 1fr 1fr / 1fr;
-    
-}
-
-.tooltip:hover p.tooltiptext{
- 
-
-
-
-.tooltip:hover img.tooltiptext {
-    width: 50%;
-    height: auto;
-    display: inline-block;
-    
-} */
-
-
-
-
-
-/* .tooltip:hover {
-  visibility: visible; 
-} */
-
-/* .tooltip {
-    position: relative;
-    display: inline-block;
-    /* border-bottom: 1px dotted black;
-  }
-
-  /* .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0; 
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px; 
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
- .tooltip .tooltiptext::after {
-    content: "hellooooo";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  } 
-  
- .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }  */

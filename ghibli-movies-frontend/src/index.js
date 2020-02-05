@@ -41,8 +41,8 @@ class Movie{
     <strong>Description</strong>:  ${this.description}<br>`
 
     this.addDirectorTotheBlock(infoCollect)
-
     infoCollect.append(p)
+    this.addCharactersTotheBlock(infoCollect)
 
 
     divCard.append(h2,divForImg,infoCollect)
@@ -50,6 +50,7 @@ class Movie{
 
 
   }
+
 
   addDirectorTotheBlock(infoCollect){
 
@@ -76,6 +77,24 @@ class Movie{
     divForDirector.append(divForTooltip)
 
     infoCollect.append(divForDirector)
+  }
+
+  addCharactersTotheBlock(infoCollect){
+    
+    let divForCharacters = document.createElement("div")
+    divForCharacters.innerHTML = "<strong> Characters: </strong>"
+
+    let pForCharacters = document.createElement("p")
+
+    for (const c in this.characters){
+      pForCharacters.innerText += this.characters[c].name
+    }
+
+    divForCharacters.append(pForCharacters)
+    infoCollect.append(divForCharacters)
+    
+
+
   }
 
 
