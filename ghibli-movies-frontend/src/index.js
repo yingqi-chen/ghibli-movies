@@ -30,7 +30,6 @@ class Movie{
     divForImg.append(img)
     
 
-
     let infoCollect = document.createElement('div')
     infoCollect.setAttribute("class","movie-info")
     
@@ -42,7 +41,7 @@ class Movie{
 
     this.director.addDirectorTotheBlock(infoCollect)
     infoCollect.append(p)
-    this.addCharactersTotheBlock(infoCollect)
+    Character.addCharactersTotheBlock(infoCollect,this.characters)
 
 
     divCard.append(h2,divForImg,infoCollect)
@@ -52,25 +51,6 @@ class Movie{
   }
 
 
-
-
-  addCharactersTotheBlock(infoCollect){
-    
-    let divForCharacters = document.createElement("div")
-    divForCharacters.innerHTML = "<strong> Characters: </strong>"
-
-    let pForCharacters = document.createElement("p")
-
-    for (const c in this.characters){
-      pForCharacters.innerText += this.characters[c].name
-    }
-
-    divForCharacters.append(pForCharacters)
-    infoCollect.append(divForCharacters)
-    
-
-
-  }
 
 
 }
@@ -116,6 +96,24 @@ class Character{
     this.name = character.name
     this.image = character.image
     this.introduction = character.introduction
+  }
+
+  static addCharactersTotheBlock(infoCollect,characters){
+    
+    let divForCharacters = document.createElement("div")
+    divForCharacters.innerHTML = "<strong> Characters: </strong>"
+
+    let pForCharacters = document.createElement("p")
+
+    for (const c in characters){
+      pForCharacters.innerText += characters[c].name
+    }
+
+    divForCharacters.append(pForCharacters)
+    infoCollect.append(divForCharacters)
+    
+
+
   }
 }
 
