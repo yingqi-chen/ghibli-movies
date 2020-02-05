@@ -116,21 +116,14 @@ class Character{
       let imgForCharacter = document.createElement("img")
       imgForCharacter.setAttribute("class", "tooltiptext")
       imgForCharacter.setAttribute("src",`./src/images/characters/${characters[c].image}`)
-      divForTooltip.append(imgForCharacter) 
+      
 
       let introForCharacter = document.createElement("p")
       introForCharacter.setAttribute("class","tooltiptext")
       introForCharacter.innerText = characters[c].introduction
-      divForTooltip.append(introForCharacter)
 
+      divForTooltip.append(imgForCharacter, introForCharacter)
       pforTargetBlock.append(divForTooltip)
-
-
-      // characters[c].addImageToBlock(divforTargetBlock)
-      // characters[c].addIntroductionToBlock(divforTargetBlock)
-      // // let pForCharacters = document.createElement("p")
-      // pForCharacters.setAttribute("class","tooltiptext")
-      // pForCharacters.innerText = 
       pForNames.append(pforTargetBlock)
     }
 
@@ -140,9 +133,6 @@ class Character{
     
   }
 
-  addImageToBlock(divForCharacters){
-
-  }
 }
 
 
