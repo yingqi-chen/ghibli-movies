@@ -63,7 +63,7 @@ class Director{
   addDirectorTotheBlock(infoCollect){
 
     let divForDirector = document.createElement('div')
-    divForDirector.setAttribute('class',"director-block")
+    divForDirector.setAttribute('class',"target-block")
     divForDirector.innerHTML = `<strong>Director</strong>:  ${this.name}<br>`
     divForDirector.style.textDecoration = "underline dotted"
   
@@ -100,13 +100,23 @@ class Character{
     let divForCharacters = document.createElement("div")
     divForCharacters.innerHTML = "<strong> Characters: </strong>"
 
-    let pForCharacters = document.createElement("p")
+    let pForNames = document.createElement("p")
+    pForNames.setAttribute("class", "character-block")
+    
+
 
     for (const c in characters){
-      pForCharacters.innerText += characters[c].name
+      pForNames.innerText += characters[c].name
+      // let pForCharacters = document.createElement("p")
+      // pForCharacters.setAttribute("class","tooltiptext")
+      // pForCharacters.innerText = 
     }
 
-    divForCharacters.append(pForCharacters)
+    
+
+
+
+    divForCharacters.append(pForNames)
     infoCollect.append(divForCharacters)
     
 

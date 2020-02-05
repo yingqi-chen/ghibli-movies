@@ -48,7 +48,7 @@ img {
 }
 
 
-.director-block .tooltip{
+.target-block .tooltip{
     display: none;
     position: relative;
 }
@@ -58,7 +58,7 @@ p {
   }
 
 
-.director-block:hover .tooltip{
+.target-block:hover .tooltip{
     z-index: 21;
     background-color: cornflowerblue;
      opacity: 0.8;
@@ -67,7 +67,7 @@ p {
      border: 3px solid black;
   }
 
-.director-block:hover .tooltip p.tooltiptext{
+.target-block:hover .tooltip p.tooltiptext{
     visibility: visible;
     width: 100%;
     height: auto;
