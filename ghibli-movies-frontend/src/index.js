@@ -40,7 +40,7 @@ class Movie{
     <strong>Release year</strong>:  ${this.release_year}<br>
     <strong>Description</strong>:  ${this.description}<br>`
 
-    this.addDirectorTotheBlock(infoCollect)
+    this.director.addDirectorTotheBlock(infoCollect)
     infoCollect.append(p)
     this.addCharactersTotheBlock(infoCollect)
 
@@ -52,32 +52,7 @@ class Movie{
   }
 
 
-  addDirectorTotheBlock(infoCollect){
 
-    let divForDirector = document.createElement('div')
-    divForDirector.setAttribute('class',"director-block")
-    divForDirector.innerHTML = `<strong>Director</strong>:  ${this.director.name}<br>`
-    divForDirector.style.textDecoration = "underline dotted"
-  
-    
-    let divForTooltip = document.createElement('div')
-    divForTooltip.setAttribute('class',"tooltip")
-
-    let pForDirector = document.createElement('p')
-    pForDirector.setAttribute("class", "tooltiptext")
-    pForDirector.innerText = this.director.introduction
-
-    let imgForDirector = document.createElement('img')
-    imgForDirector.setAttribute("class", "tooltiptext")
-    imgForDirector.setAttribute('src', `./src/images/directors/${this.director.image}`)
-
- 
-    divForTooltip.append(imgForDirector,pForDirector)
-
-    divForDirector.append(divForTooltip)
-
-    infoCollect.append(divForDirector)
-  }
 
   addCharactersTotheBlock(infoCollect){
     
@@ -106,6 +81,33 @@ class Director{
     this.name = director.name
     this.introduction = director.introduction
     this.image = director.image
+  }
+
+  addDirectorTotheBlock(infoCollect){
+
+    let divForDirector = document.createElement('div')
+    divForDirector.setAttribute('class',"director-block")
+    divForDirector.innerHTML = `<strong>Director</strong>:  ${this.name}<br>`
+    divForDirector.style.textDecoration = "underline dotted"
+  
+    
+    let divForTooltip = document.createElement('div')
+    divForTooltip.setAttribute('class',"tooltip")
+
+    let pForDirector = document.createElement('p')
+    pForDirector.setAttribute("class", "tooltiptext")
+    pForDirector.innerText = this.introduction
+
+    let imgForDirector = document.createElement('img')
+    imgForDirector.setAttribute("class", "tooltiptext")
+    imgForDirector.setAttribute('src', `./src/images/directors/${this.image}`)
+
+ 
+    divForTooltip.append(imgForDirector,pForDirector)
+
+    divForDirector.append(divForTooltip)
+
+    infoCollect.append(divForDirector)
   }
 }
 
