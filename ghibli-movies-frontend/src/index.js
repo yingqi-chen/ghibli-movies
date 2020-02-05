@@ -101,25 +101,46 @@ class Character{
     divForCharacters.innerHTML = "<strong> Characters: </strong>"
 
     let pForNames = document.createElement("p")
-    pForNames.setAttribute("class", "character-block")
+    pForNames.style.textDecoration = "underline dotted"
     
 
 
     for (const c in characters){
-      pForNames.innerText += characters[c].name
-      // let pForCharacters = document.createElement("p")
+      let pforTargetBlock = document.createElement("p")
+      pforTargetBlock.innerText += characters[c].name
+      pforTargetBlock.setAttribute("class","target-block")
+      
+      let divForTooltip = document.createElement("div")
+      divForTooltip.setAttribute("class","tooltip")
+      
+      let imgForCharacter = document.createElement("img")
+      imgForCharacter.setAttribute("class", "tooltiptext")
+      imgForCharacter.setAttribute("src",`./src/images/characters/${characters[c].image}`)
+      divForTooltip.append(imgForCharacter) 
+
+      let introForCharacter = document.createElement("p")
+      introForCharacter.setAttribute("class","tooltiptext")
+      introForCharacter.innerText = characters[c].introduction
+      divForTooltip.append(introForCharacter)
+
+      pforTargetBlock.append(divForTooltip)
+
+
+      // characters[c].addImageToBlock(divforTargetBlock)
+      // characters[c].addIntroductionToBlock(divforTargetBlock)
+      // // let pForCharacters = document.createElement("p")
       // pForCharacters.setAttribute("class","tooltiptext")
       // pForCharacters.innerText = 
+      pForNames.append(pforTargetBlock)
     }
 
     
-
-
-
     divForCharacters.append(pForNames)
     infoCollect.append(divForCharacters)
     
+  }
 
+  addImageToBlock(divForCharacters){
 
   }
 }

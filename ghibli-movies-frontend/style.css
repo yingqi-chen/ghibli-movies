@@ -76,11 +76,12 @@ p {
 
 .tooltip img.tooltiptext{
     position: relative;
-    top: 7%;
-    left: 5%;
+    /* top: 7%;
+    left: 5%; */
     width:80%;
     height: auto;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 
