@@ -17,11 +17,9 @@ class Movie{
     let divCard = document.createElement('div')
     divCard.setAttribute("id", this.title)
     divCard.setAttribute("class","movie-card")
-
     
     let h2 =  document.createElement('h2')
     h2.innerText = this.title
-
 
     let divForImg = document.createElement("div")
     divForImg.setAttribute("class","images")
@@ -66,24 +64,14 @@ class Director{
     divForDirector.setAttribute('class',"target-block")
     divForDirector.innerHTML = `<strong>Director</strong>:  ${this.name}<br>`
     divForDirector.style.textDecoration = "underline dotted"
-  
-    
+   
     let divForTooltip = document.createElement('div')
     divForTooltip.setAttribute('class',"tooltip")
 
-    let pForDirector = document.createElement('p')
-    pForDirector.setAttribute("class", "tooltiptext")
-    pForDirector.innerText = this.introduction
-
-
-
     Practical.addImg(this,divForTooltip,"directors")
-
- 
-    divForTooltip.append(pForDirector)
+    Practical.addIntro(this,divForTooltip)
 
     divForDirector.append(divForTooltip)
-
     infoCollect.append(divForDirector)
   }
 }
@@ -114,13 +102,8 @@ class Character{
       divForTooltip.setAttribute("class","tooltip")
       
       Practical.addImg(characters[c],divForTooltip,"characters")
+      Practical.addIntro(characters[c],divForTooltip)
       
-
-      let introForCharacter = document.createElement("p")
-      introForCharacter.setAttribute("class","tooltiptext")
-      introForCharacter.innerText = characters[c].introduction
-
-      divForTooltip.append(introForCharacter)
       pforTargetBlock.append(divForTooltip)
       pForNames.append(pforTargetBlock)
     }
@@ -135,10 +118,17 @@ class Character{
 
 class Practical {
   static addImg(obj,div,stringForImage){
-    let imgForCharacter = document.createElement("img")
-    imgForCharacter.setAttribute("class", "tooltiptext")
-    imgForCharacter.setAttribute("src",`./src/images/${stringForImage}/${obj.image}`)
-    div.append(imgForCharacter)
+    let img = document.createElement("img")
+    img.setAttribute("class", "tooltiptext")
+    img.setAttribute("src",`./src/images/${stringForImage}/${obj.image}`)
+    div.append(img)
+  }
+
+  static addIntro(obj,div){   
+    let intro = document.createElement("p")
+    intro.setAttribute("class","tooltiptext")
+    intro.innerText = obj.introduction
+    div.append(intro)
   }
 }
 
