@@ -98,11 +98,13 @@ div#create-movie{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    font-family: cursive;
 }
 
 div#create-movie img{
     width: 100px;
     height: auto;
+    justify-self: center;
 }
 
 
