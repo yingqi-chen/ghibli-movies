@@ -149,6 +149,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
       );
   }
 
+let button = document.querySelector("div#create-movie")
+button.addEventListener("click",()=>{
+  alert("you did a good job kiki!!!")
+})
  
 
   
