@@ -91,4 +91,18 @@ p {
     overflow: hidden;
 }
 
+div#create-movie{
+    position: fixed;
+    top: 20%;
+    right: 3%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+div#create-movie img{
+    width: 100px;
+    height: auto;
+}
+
 
