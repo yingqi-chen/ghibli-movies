@@ -75,12 +75,12 @@ class Director{
     pForDirector.setAttribute("class", "tooltiptext")
     pForDirector.innerText = this.introduction
 
-    let imgForDirector = document.createElement('img')
-    imgForDirector.setAttribute("class", "tooltiptext")
-    imgForDirector.setAttribute('src', `./src/images/directors/${this.image}`)
+
+
+    Practical.addImg(this,divForTooltip,"directors")
 
  
-    divForTooltip.append(imgForDirector,pForDirector)
+    divForTooltip.append(pForDirector)
 
     divForDirector.append(divForTooltip)
 
@@ -113,16 +113,14 @@ class Character{
       let divForTooltip = document.createElement("div")
       divForTooltip.setAttribute("class","tooltip")
       
-      let imgForCharacter = document.createElement("img")
-      imgForCharacter.setAttribute("class", "tooltiptext")
-      imgForCharacter.setAttribute("src",`./src/images/characters/${characters[c].image}`)
+      Practical.addImg(characters[c],divForTooltip,"characters")
       
 
       let introForCharacter = document.createElement("p")
       introForCharacter.setAttribute("class","tooltiptext")
       introForCharacter.innerText = characters[c].introduction
 
-      divForTooltip.append(imgForCharacter, introForCharacter)
+      divForTooltip.append(introForCharacter)
       pforTargetBlock.append(divForTooltip)
       pForNames.append(pforTargetBlock)
     }
@@ -135,9 +133,14 @@ class Character{
 
 }
 
-// class Practical {
-//   static 
-// }
+class Practical {
+  static addImg(obj,div,stringForImage){
+    let imgForCharacter = document.createElement("img")
+    imgForCharacter.setAttribute("class", "tooltiptext")
+    imgForCharacter.setAttribute("src",`./src/images/${stringForImage}/${obj.image}`)
+    div.append(imgForCharacter)
+  }
+}
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
