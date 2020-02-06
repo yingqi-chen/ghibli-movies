@@ -135,6 +135,10 @@ class Character{
 
 }
 
+// class Practical {
+//   static 
+// }
+
 
 document.addEventListener("DOMContentLoaded", ()=>{
   fetchMovies()

@@ -62,9 +62,16 @@ p {
     z-index: 21;
     background-color: cornflowerblue;
      opacity: 0.8;
-     display: grid;
-     grid-template-columns: repeat(2,1fr);
+     display: flex;
+     /* grid-template-columns: repeat(2,1fr); */
      border: 3px solid black;
+     padding: 1%;
+    
+  }
+
+  .target-block:hover .tooltip .tooltiptext{
+     margin: 1%;
+
   }
 
 .target-block:hover .tooltip p.tooltiptext{
