@@ -17,7 +17,10 @@
         </select></br>
         
         <label>Description</label>
-        <input type="text" name="movie[description]" id="movie[description]"></br>
+        <textarea name="movie[description]" id="movie[description]"></textarea></br>
+
+        <label>Image</label>
+        <input type="text" name="movie[image]" id="movie[image]"  placeholder="Write down the URL"></br>
 
         <label>Rotten Tomato Score</label>
         <input type="text" name="movie[rt_score]" id="movie[rt_score]"></br>
@@ -26,13 +29,13 @@
         <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
 
         <label>Character name</label>
-        <input type="text" name="movie[characters_attributes][name]" id="movie[characters_attributes][name]"></br>
+        <input type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]"></br>
 
         <label>Character image</label>
-        <input type="text" name="movie[characters_attributes][image]" id="movie[characters_attributes][image]"></br>
+        <input type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
 
         <label>Character introduction</label>
-        <input type="text" name="movie[characters_attributes][introduction]" id="movie[characters_attributes][introduction]"></br>
+        <textarea name="movie[characters_attributes][0][introduction]" id="movie[characters_attributes][0][introduction]"></textarea></br>
         
         <input type="submit" value="submit">
       </form>
