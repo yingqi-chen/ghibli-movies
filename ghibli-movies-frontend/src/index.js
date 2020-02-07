@@ -1,7 +1,7 @@
 const BACKEND_URL = "http://localhost:3000";
 const cardArea = document.getElementById("card-area")
-const form = document.querySelector("form")
-const select = document.querySelector("select")
+let form = document.querySelector("form")
+let select = document.querySelector("select")
 let character_counter = 0
 
 
@@ -174,6 +174,37 @@ document.addEventListener("DOMContentLoaded", ()=>{
 let button = document.querySelector("div#create-movie")
 button.addEventListener("click",()=>{
   alert("you did a good job kiki!!!")
+})
+
+// 看看如何展示create的表格
+
+form.addEventListener("submit", (e)=>{
+  e.preventDefault();
+  let inputs = form.querySelectorAll("input")
+  let textareas = form.querySelectorAll("textarea")
+  let select = form.querySelector('select')
+
+  let formData = {
+    title: inputs[0].value,
+    director_id: select.value,
+    description: textareas[0].value,
+    image: inputs[1].value,
+    rt_score: inputs[2].value,
+    release_year: inputs[3].value,
+    characters_attributes: inputs[4].value
+  }
+
+  let configObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(formData)
+  };
+  fetch(`${BACKEND_URL}/movies`, configObj)
+  .then(resp=>resp.json())
+  .then(json=>console.log(json))
 })
 
 

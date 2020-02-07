@@ -15,17 +15,20 @@ class MoviesController < ApplicationController
     end
 
     def create
-        movie = Movie.create(movie_params)
-        if params["movie"]["characters_attributes"]['0']["name"] == ""
+        binding.pry
+        movie = Movie.new(movie_params)
+        if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
         end
+        movie.save
+        return movie
     end
 
 private
 
    def movie_params
     params.require(:movie).permit(
-        :title, :rt_score, :release_year, :description, :director_id, characters_attributes: [
+        :title, :rt_score, :release_year, :description, :director_id, :image, characters_attributes: [
             :name,
             :image,
             :introduction
