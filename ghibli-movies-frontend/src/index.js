@@ -20,14 +20,16 @@ class Movie{
     divCard.setAttribute("id", this.title)
     divCard.setAttribute("class","movie-card")
     
-    let h2 =  document.createElement('h2')
+    var h2 =  document.createElement('h2')
     h2.innerText = this.title
 
     let divForImg = document.createElement("div")
     divForImg.setAttribute("class","images")
     let img = document.createElement('img')
+    img.setAttribute("alt", "movie picture")
     img.setAttribute("src", `./src/images/movies/${this.image}`)
     divForImg.append(img)
+  
     
     let infoCollect = document.createElement('div')
     infoCollect.setAttribute("class","movie-info")
@@ -65,7 +67,6 @@ class Director{
   addDirectorTotheForm(director){
      let option = document.createElement("option")
      option.setAttribute("value",director.id)
-     option.setAttribute("name", "movie[director_id]")
      option.innerText = director.name
      select.append(option)
   }
