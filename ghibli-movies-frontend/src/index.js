@@ -65,6 +65,7 @@ class Director{
   addDirectorTotheForm(director){
      let option = document.createElement("option")
      option.setAttribute("value",director.id)
+     option.setAttribute("name", "movie[director_id]")
      option.innerText = director.name
      select.append(option)
   }
