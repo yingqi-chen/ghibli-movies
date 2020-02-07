@@ -2,6 +2,7 @@ const BACKEND_URL = "http://localhost:3000";
 const cardArea = document.getElementById("card-area")
 const form = document.querySelector("form")
 const select = document.querySelector("select")
+let character_counter = 0
 
 
 class Movie{
@@ -27,7 +28,11 @@ class Movie{
     divForImg.setAttribute("class","images")
     let img = document.createElement('img')
     img.setAttribute("alt", "movie picture")
-    img.setAttribute("src", `./src/images/movies/${this.image}`)
+    if(this.image){
+      img.setAttribute("src", this.image)
+    }else{
+      img.setAttribute("src", "./src/images/unknown.jpg")
+    }
     divForImg.append(img)
   
     
@@ -81,7 +86,7 @@ class Director{
     let divForTooltip = document.createElement('div')
     divForTooltip.setAttribute('class',"tooltip")
 
-    Practical.addImg(this,divForTooltip,"directors")
+    Practical.addImg(this,divForTooltip)
     Practical.addIntro(this,divForTooltip)
 
     divForDirector.append(divForTooltip)
@@ -114,7 +119,7 @@ class Character{
       let divForTooltip = document.createElement("div")
       divForTooltip.setAttribute("class","tooltip")
       
-      Practical.addImg(characters[c],divForTooltip,"characters")
+      Practical.addImg(characters[c],divForTooltip)
       Practical.addIntro(characters[c],divForTooltip)
       
       pforTargetBlock.append(divForTooltip)
@@ -130,10 +135,14 @@ class Character{
 }
 
 class Practical {
-  static addImg(obj,div,stringForImage){
+  static addImg(obj,div){
     let img = document.createElement("img")
     img.setAttribute("class", "tooltiptext")
-    img.setAttribute("src",`./src/images/${stringForImage}/${obj.image}`)
+    if (obj.image){
+    img.setAttribute("src",obj.image)
+    }else{
+      img.setAttribute("src", "./src/images/unknown.jpg")
+    }
     div.append(img)
   }
 
@@ -166,6 +175,8 @@ let button = document.querySelector("div#create-movie")
 button.addEventListener("click",()=>{
   alert("you did a good job kiki!!!")
 })
+
+
  
 
   

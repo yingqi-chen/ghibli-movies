@@ -8,17 +8,17 @@
 director_a = Director.create(
     "name"=> "Hayao Miyazaki",
     "introduction" => "Hayao Miyazaki is a Japanese animator, filmmaker, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, a film and animation studio, he has attained international acclaim as a masterful storyteller and as a maker of animated feature films, and is widely regarded as one of the most accomplished filmmakers in the animation business.", 
-    "image" => "hayao_miyazaki.jpg"
+    "image" => "./src/images/directors/hayao_miyazaki.jpg"
     )
 director_b = Director.create(
     "name"=> "Isao Takahata",
     "introduction" =>"Isao Takahata was a Japanese film director, screenwriter and producer. In 1985, he co-founded Studio Ghibli with his long-time collaborative partner Hayao Miyazaki and Miyazaki's collaborators Toshio Suzuki and Yasuyoshi Tokuma. Takahata earned international critical acclaim for his work as a director of anime films. ",
-    "image"=> "isao_takahata.jpg"
+    "image"=> "./src/images/directors/isao_takahata.jpg"
     )
 director_c = Director.create(
     "name"=> "Yoshifumi Kondō",
     "introduction" =>"Yoshifumi Kondō was a Japanese animator who worked for Studio Ghibli in his last years. He worked as an animation director on Anne of Green Gables, Sherlock Hound, Kiki's Delivery Service, Only Yesterday and Princess Mononoke. Kondō directed the animated film Whisper of the Heart, and was expected to become one of the top directors at Studio Ghibli, alongside Hayao Miyazaki and Isao Takahata, and to become their eventual successor.",
-    "image"=>"yoshifumi_kondou.jpg"
+    "image"=>"./src/images/directors/yoshifumi_kondou.jpg"
     )
 
 movie_a = Movie.create(title: "Castle in the Sky",
@@ -26,7 +26,7 @@ movie_a = Movie.create(title: "Castle in the Sky",
 "director_id"=> director_a.id,
 "release_year"=> "1986",
 "rt_score"=> "95",
-"image"=> "castle.jpg"
+"image"=> "./src/images/movies/castle.jpg"
 )
 
 movie_b = Movie.create(
@@ -35,7 +35,7 @@ movie_b = Movie.create(
     "director_id"=> director_b.id,
     "release_year"=> "1988",
     "rt_score"=> "97",
-    "image"=> "fireflies.jpg"
+    "image"=> "./src/images/movies/fireflies.jpg"
     )
 
 movie_c = Movie.create(
@@ -44,7 +44,7 @@ movie_c = Movie.create(
     "director_id"=> director_a.id,
     "release_year"=> "1988",
     "rt_score"=> "93",
-    "image"=> "totoro.jpg"
+    "image"=> "./src/images/movies/totoro.jpg"
 )
 
 movie_d = Movie.create(
@@ -53,7 +53,7 @@ movie_d = Movie.create(
     "director_id"=> director_a.id,
     "release_year"=> "1989",
     "rt_score"=> "96",
-    "image"=>"kiki.jpg"
+    "image"=>"./src/images/movies/kiki.jpg"
 )
 
 movie_e = Movie.create(
@@ -62,7 +62,7 @@ movie_e = Movie.create(
     "director_id"=> director_b.id,
     "release_year"=> "1991",
     "rt_score"=> "100",
-    "image" =>"only_yesterday.jpg"
+    "image" =>"./src/images/movies/only_yesterday.jpg"
 )
 
 movie_f = Movie.create(
@@ -71,7 +71,7 @@ movie_f = Movie.create(
     "director_id"=> director_a.id,
     "release_year"=> "1992",
     "rt_score"=> "94",
-    "image" =>"porco_rosso.jpg"
+    "image" =>"./src/images/movies/porco_rosso.jpg"
 )
 
 movie_g = Movie.create(
@@ -80,7 +80,7 @@ movie_g = Movie.create(
     "director_id"=> director_b.id,
     "release_year"=> "1994",
     "rt_score"=> "78",
-    "image" => "pom_poko.jpg"
+    "image" => "./src/images/movies/pom_poko.jpg"
 )
 
 movie_h = Movie.create(
@@ -89,7 +89,7 @@ movie_h = Movie.create(
     "director_id"=> director_c.id,
     "release_year"=> "1995",
     "rt_score"=> "91",
-    "image" =>"whisper.jpg"
+    "image" =>"./src/images/movies/whisper.jpg"
 )
 
 movie_i = Movie.create(
@@ -98,24 +98,24 @@ movie_i = Movie.create(
   "director_id"=> director_a.id,
   "release_year"=> "1997",
   "rt_score"=> "92",
-  "image" =>"mononoke.jpg"
+  "image" =>"./src/images/movies/mononoke.jpg"
 )
 
 character_a = Character.create(
     "name"=> "Princess Sheeta",
     "introduction"=> "Sheeta is the rightful princess of Laputa. She possesses an Aetherium crystal, which can save her in times of danger. Possessing the Aetherium crystal, she is chased down by the Dola gang, Muska and the military. Muska manages to capture her and take her into custody aboard the civilian passenger airship Saturn.",
     "movie_id"=> movie_a.id,
-    "image" =>"sheeta.jpg"
+    "image" =>"./src/images/characters/sheeta.jpg"
     )
 character_b = Character.create(
     "name"=> "Ashitaka",
     "introduction"=> "Ashitaka is the main protagonist in the 1997 Studio Ghibli film Princess Mononoke. He is the prince of an Emishi village who, after being cursed by a demon boar, travels to the west to seek a cure and prevent his curse from falling onto another.",
     "movie_id"=> movie_i.id,
-    "image" =>"ashitaka.jpg"
+    "image" =>"./src/images/characters/ashitaka.jpg"
 )
 character_c = Character.create(
     "name"=> "Shizuku Tsukishima",
-    "image" =>"shizuku_tsukishima.jpg",
+    "image" =>"./src/images/characters/shizuku_tsukishima.jpg",
     "movie_id"=> movie_h.id,
     "introduction" => "Shizuku Tsukishima is the protagonist of Whisper of the Heart. Shizuku attends the local Junior High School and is currently sitting tests to get into High School. She loves reading."
 )
@@ -123,40 +123,40 @@ character_d = Character.create(
     "name"=> "Kiki",
     "introduction"=> "Kiki also known as Kiki the Witch is a fictional 13-year-old female witch. Kiki is upbeat, outspoken, a little naive, independent, responsible and enterprising when she goes on an adventure.",
     "movie_id"=> movie_d.id,
-    "image" =>"kiki.jpg"
+    "image" =>"./src/images/characters/kiki.jpg"
 
 )
 character_e = Character.create(
     "name"=> "Taeko Okajima",
     "introduction"=> "Taeko is 27, unmarried and has lived her whole life in Tokyo, currently holding a position with a company there. She decides to take a 10 day vacation to visit her elder sister’s in-laws at their rural countryside farm to help with the safflower harvest and get away from city life. ",
     "movie_id"=> movie_e.id,
-    "image" =>"taekp.jpg"
+    "image" =>"./src/images/characters/taeko.jpg"
 )
 character_f = Character.create(
     "name"=> "Setsuko Yokokawa",
     "introduction"=> "Setsuko Yokokawa is a preschool student and the younger sister of Seita Yokokawa in the Studio Ghibli movie Grave of the Fireflies. She was born in 1941, but later dies in 1945 towards the end of the film.",
     "movie_id"=> movie_b.id,
-    "image" => "setsuko.jpg"
+    "image" => "./src/images/characters/setsuko.jpg"
 )
 character_g = Character.create(
     "name"=> "Totoro",
     "introduction"=> "Totoro is the title tetartagonist and forest spirit that lives in the largest camphor tree in a small village. ",
     "movie_id"=> movie_c.id,
-    "image" => "totoro.jpg"
+    "image" => "./src/images/characters/totoro.jpg"
 )
 
 character_h = Character.create(
     "name"=> "Marco Pagot",
     "introduction"=> "Marco Pagot is the protagonist in the movie Porco Rosso. He is a human who was transformed into a pig. He is known as Porco Rosso, the bounty hunter.",
     "movie_id"=> movie_f.id,
-    "image" => "marco.jpg"
+    "image" => "./src/images/characters/marco.jpg"
 )
 
 character_i = Character.create(
     "name"=> "Inugami Gyobu",
     "introduction"=> "Inugami Gyobu was a leader of Raccoons Dogs. He passes away due to a heart attack amidst the Monster Festival. He is one of Shikoku's Wise Men, who leads 800 tanukis.",
     "movie_id"=> movie_g.id,
-    "image" => "inugami.jpg"
+    "image" => "./src/images/characters/inugami.jpg"
 )
 
 
