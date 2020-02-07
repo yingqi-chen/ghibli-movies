@@ -107,6 +107,10 @@ div#create-movie img{
     justify-self: center;
 }
 
+input {
+    margin: 1px;
+}
+
 
 
 

@@ -22,6 +22,20 @@ class MoviesController < ApplicationController
     end
 
     def create
+        binding.pry
+        movie = Movie.create(movie_params)
+        character = Character.create(character_params)
+        character.movie_id = movie.id
     end
+
+private
+
+   def movie_params
+   end
+  
+   
+   def character_params
+
+   end
 
 end

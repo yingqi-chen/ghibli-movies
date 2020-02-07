@@ -7,7 +7,7 @@
   <body>
       <h1>Welcome to the Ghibli World!</h1>
 
-      <form>
+      <form action="http://localhost:3000/movies/" method="post">
         <h3>Create a movie!</h3>
         <label>Title</label>
         <input type="text" name="movie[title]" id="movie[title]"></br>
@@ -15,8 +15,7 @@
         <label>Director</label>
         <select>
         </select></br>
-
-
+        
         <label>Description</label>
         <input type="text" name="movie[description]" id="movie[description]"></br>
 
@@ -26,14 +25,16 @@
         <label>Release year</label>
         <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
 
-        <label>Character</label>
-        <input type="text" name="movie[characters]" id="movie[characters]"></br>
+        <label>Character name</label>
+        <input type="text" name="movie[characters_attributes][name]" id="movie[characters_attributes][name]"></br>
 
         <label>Character image</label>
-        <input type="text" name="movie[title]" id="movie[title]"></br>
+        <input type="text" name="movie[characters_attributes][image]" id="movie[characters_attributes][image]"></br>
 
-
-
+        <label>Character introduction</label>
+        <input type="text" name="movie[characters_attributes][introduction]" id="movie[characters_attributes][introduction]"></br>
+        
+        <input type="submit" value="submit">
       </form>
 
       <div id="ghibli-video">
