@@ -1,5 +1,7 @@
 const BACKEND_URL = "http://localhost:3000";
 const cardArea = document.getElementById("card-area")
+const form = document.querySelector("form")
+const select = document.querySelector("select")
 
 
 class Movie{
@@ -56,6 +58,15 @@ class Director{
     this.name = director.name
     this.introduction = director.introduction
     this.image = director.image
+    this.id = director.id
+    this.addDirectorTotheForm(director)
+  }
+
+  addDirectorTotheForm(director){
+     let option = document.createElement("option")
+     option.setAttribute("value",director.id)
+     option.innerText = director.name
+     select.append(option)
   }
 
   addDirectorTotheBlock(infoCollect){
