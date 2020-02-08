@@ -4,6 +4,7 @@ const form = document.querySelector("form")
 const select = form.querySelector('select')
 let character_counter = 0
 const directors_names = []
+let addMovie = false
 
 
 class Movie{
@@ -180,7 +181,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 let button = document.querySelector("div#create-movie")
 button.addEventListener("click",()=>{
-  form.style.display = "block"
+  if(addMovie){
+    form.style.display = "none"
+  }else{
+    form.style.display = "block"
+  }
+  addMovie = !addMovie
 })
 
 // 看看如何展示create的表格 button.onclick = ...
