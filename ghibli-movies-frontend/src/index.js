@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 let button = document.querySelector("div#create-movie")
 button.addEventListener("click",()=>{
-  alert("you did a good job kiki!!!")
+  form.style.display = "block"
 })
 
 // 看看如何展示create的表格 button.onclick = ...
