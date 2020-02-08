@@ -1,7 +1,7 @@
 const BACKEND_URL = "http://localhost:3000";
 const cardArea = document.getElementById("card-area")
-let form = document.querySelector("form")
-let select = document.querySelector("select")
+const form = document.querySelector("form")
+const select = form.querySelector('select')
 let character_counter = 0
 const directors_names = []
 
@@ -181,13 +181,12 @@ button.addEventListener("click",()=>{
   alert("you did a good job kiki!!!")
 })
 
-// 看看如何展示create的表格
+// 看看如何展示create的表格 button.onclick = ...
 
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
   let inputs = form.querySelectorAll("input")
   let textareas = form.querySelectorAll("textarea")
-  let select = form.querySelector('select')
 
   let formData = {
     title: inputs[0].value,
@@ -196,8 +195,14 @@ form.addEventListener("submit", (e)=>{
     image: inputs[1].value,
     rt_score: inputs[2].value,
     release_year: inputs[3].value,
-    characters_attributes: inputs[4].value
-  }
+    characters_attributes:  {
+      "0": {
+        name: inputs[4].value,
+        image: inputs[5].value,
+        introduction: textareas[1].value
+      }
+    }
+   }
 
   let configObj = {
     method: "POST",
