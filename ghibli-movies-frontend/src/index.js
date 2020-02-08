@@ -3,6 +3,7 @@ const cardArea = document.getElementById("card-area")
 let form = document.querySelector("form")
 let select = document.querySelector("select")
 let character_counter = 0
+const directors_names = []
 
 
 class Movie{
@@ -66,14 +67,17 @@ class Director{
     this.introduction = director.introduction
     this.image = director.image
     this.id = director.id
-    this.addDirectorTotheForm(director)
+    this.addDirectorTotheForm()
   }
 
-  addDirectorTotheForm(director){
-     let option = document.createElement("option")
-     option.setAttribute("value",director.id)
-     option.innerText = director.name
-     select.append(option)
+  addDirectorTotheForm(){
+     if (!directors_names.includes(this.name)){
+        let option = document.createElement("option")
+        option.setAttribute("value",this.id)
+        option.innerText = this.name
+        select.append(option)
+        directors_names.push(this.name)
+     }
   }
 
   addDirectorTotheBlock(infoCollect){
@@ -157,6 +161,7 @@ class Practical {
 
 document.addEventListener("DOMContentLoaded", ()=>{
   fetchMovies()
+
 });
 
   function fetchMovies(){
@@ -202,10 +207,13 @@ form.addEventListener("submit", (e)=>{
     },
     body: JSON.stringify(formData)
   };
+
   fetch(`${BACKEND_URL}/movies`, configObj)
   .then(resp=>resp.json())
   .then(json=>console.log(json))
 })
+
+
 
 
  
