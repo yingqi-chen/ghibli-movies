@@ -114,15 +114,27 @@ input {
 }
 
 input[type='submit']{
-    width: auto
+    width: 100px;
+    height: auto;
+    font-size: 100%;
+    background-color:rgb(12, 109, 8);
+    border-radius: 5px;
+    color: whitesmoke;
+    font-family: cursive;
+    
 }
 
 form {
     text-align: center;
     display: none;
     margin: 1%;
+    font-family: cursive;
+    color: rgb(12, 109, 8);
 }
 
+form > h3{
+    font-size: 130%;
+}
 
 
 
