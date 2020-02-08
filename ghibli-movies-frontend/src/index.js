@@ -56,8 +56,10 @@ class Movie{
 
     this.director.addDirectorTotheBlock(infoCollect)
     infoCollect.append(pForInfo)
-    Character.addCharactersTotheBlock(infoCollect,this.characters)
-  }
+    if (!this.characters.length == 0){
+      Character.addCharactersTotheBlock(infoCollect,this.characters)
+     }
+    }
 }
 
 
@@ -102,7 +104,7 @@ class Character{
   constructor(character){
     this.name = character.name
     this.image = character.image
-    this.introduction = character.introduction 
+    this.introduction = character.introduction
   }
 
   static addCharactersTotheBlock(infoCollect,characters){
@@ -218,7 +220,7 @@ form.addEventListener("submit", (e)=>{
   .then(json=>{
     let mObject = new Movie(json);
     mObject.addMovietoPage();
-    alert("Congrats! You succesfully created a movie!")
+    alert("Congrats! Movie created! Scroll down to see your new movie!")
   }
 )
   .catch(error=>{

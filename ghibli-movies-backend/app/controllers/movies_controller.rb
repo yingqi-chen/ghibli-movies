@@ -15,10 +15,10 @@ class MoviesController < ApplicationController
     end
 
     def create
-        binding.pry
-        movie = Movie.new(movie_params)
+        movie = Movie.create(movie_params)
         if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
+          movie.characters.delete_all
         end
         movie.save
         render json: movie.to_json(
