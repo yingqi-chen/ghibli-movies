@@ -102,7 +102,7 @@ class Character{
   constructor(character){
     this.name = character.name
     this.image = character.image
-    this.introduction = character.introduction
+    this.introduction = character.introduction 
   }
 
   static addCharactersTotheBlock(infoCollect,characters){
@@ -215,7 +215,17 @@ form.addEventListener("submit", (e)=>{
 
   fetch(`${BACKEND_URL}/movies`, configObj)
   .then(resp=>resp.json())
-  .then(json=>console.log(json))
+  .then(json=>{
+    let mObject = new Movie(json);
+    mObject.addMovietoPage();
+    alert("Congrats! You succesfully created a movie!")
+  }
+)
+  .catch(error=>{
+    alert("Error! Can't create a movie...");
+    console.log(error.message);
+  }
+  )
 })
 
 
