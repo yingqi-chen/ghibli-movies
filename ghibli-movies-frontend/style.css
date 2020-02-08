@@ -136,5 +136,10 @@ form > h3{
     font-size: 130%;
 }
 
+select textarea{
+    margin: 1px;
+}
+
+
 
 
