@@ -109,7 +109,12 @@ div#create-movie img{
 
 input {
     margin: 1px;
-    width: auto;
+    width: 250px;
+    height: auto;
+}
+
+input[type='submit']{
+    width: auto
 }
 
 
