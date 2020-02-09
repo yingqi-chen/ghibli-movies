@@ -44,7 +44,6 @@ class Movie{
  
 
     divCard.append(h2,divForImg,infoCollect)
-    this.addDeleteButton(divCard)
     cardArea.append(divCard)
 
   }
@@ -62,15 +61,16 @@ class Movie{
     if (!this.characters.length == 0){
       Character.addCharactersTotheBlock(infoCollect,this.characters)
      }
+    this.addDeleteButton(infoCollect)
     }
 
-   addDeleteButton(divCard){
+   addDeleteButton(infoCollect){
     let movie = this
     let button = document.createElement("button")
     button.innerText = "Delete this movie"
     button.setAttribute("class", "delete-movie")
     button.onclick = Movie.deleteMovie.bind(movie)
-    divCard.append(button)
+    infoCollect.append(button)
    }
 
   
@@ -279,11 +279,9 @@ form.addEventListener("submit", (e)=>{
 })
 
 function clearAllInputs(inputs, textareas){
-
   inputs.forEach((input)=>input.value = "")
   textareas.forEach((text)=>text.value = "")
   document.querySelector("input[type='submit']").value = 'submit'
-
 }
 
 

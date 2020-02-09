@@ -141,5 +141,12 @@ select textarea{
 }
 
 
-
+.delete-movie{
+    background-color: forestgreen;
+    padding: 2%;
+    border: 1px solid black;
+    margin: 1%;
+    border-radius: 10%;
+    color: whitesmoke;
+}
 
