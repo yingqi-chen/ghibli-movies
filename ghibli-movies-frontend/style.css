@@ -113,7 +113,7 @@ input {
     height: auto;
 }
 
-input[type='submit']{
+input[type='submit'], input[type='button']{
     width: 100px;
     height: auto;
     font-size: 100%;
@@ -150,3 +150,6 @@ select textarea{
     color: whitesmoke;
 }
 
+input[type='button']{
+    width: auto;
+}
