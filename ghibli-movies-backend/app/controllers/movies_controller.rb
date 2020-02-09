@@ -29,6 +29,16 @@ class MoviesController < ApplicationController
         )
     end
 
+    def destroy
+        movie = Movie.find_by id: params["id"]
+        if movie
+          movie.delete
+          render plain:  "Succesfully deleted from database!"
+        else
+          render plain: "Cannot find this movie!"
+        end
+    end
+
 private
 
    def movie_params

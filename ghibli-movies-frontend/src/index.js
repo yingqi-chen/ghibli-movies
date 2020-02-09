@@ -9,6 +9,7 @@ let addMovie = false
 
 class Movie{
   constructor(movie){
+    this.id = movie.id
     this.title = movie.title
     this.description = movie.description
     this.rt_score = movie.rt_score
@@ -37,12 +38,13 @@ class Movie{
     }
     divForImg.append(img)
   
-    
     let infoCollect = document.createElement('div')
     infoCollect.setAttribute("class","movie-info")
     this.addInfoCollect(infoCollect)
+ 
 
     divCard.append(h2,divForImg,infoCollect)
+    this.addDeleteButton(divCard)
     cardArea.append(divCard)
 
   }
@@ -61,6 +63,36 @@ class Movie{
       Character.addCharactersTotheBlock(infoCollect,this.characters)
      }
     }
+
+   addDeleteButton(divCard){
+    let movie = this
+    let button = document.createElement("button")
+    button.innerText = "Delete this movie"
+    button.setAttribute("class", "delete-movie")
+    button.onclick = Movie.deleteMovie.bind(movie)
+    divCard.append(button)
+   }
+
+   static deleteMovie(){
+    let configObj = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        id: this.id
+      })
+    };
+
+     fetch(`${BACKEND_URL}/movies/${this.id}`, configObj)
+     .then(resp=>resp.text())
+     .then(resp=>alert(resp))
+     .then(()=>document.getElementById(this.title).remove())
+     .catch(error=>console.log(error))
+     
+     
+   }
 }
 
 
@@ -188,8 +220,6 @@ button.addEventListener("click",()=>{
   }
   addMovie = !addMovie
 })
-
-// 看看如何展示create的表格 button.onclick = ...
 
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
