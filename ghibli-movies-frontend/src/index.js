@@ -109,6 +109,7 @@ class Movie{
         alert("Congrats! Movie created! Scroll down to see your new movie!")
        }
       )
+      .then(()=>clearAllInputs(inputs,textareas))
       .catch(error=>{
         alert("Error! Can't create a movie...");
         console.log(error.message);
@@ -275,6 +276,14 @@ form.addEventListener("submit", (e)=>{
     alert("Error...A movie must at least have a name!")
   }
 })
+
+function clearAllInputs(inputs, textareas){
+
+  inputs.forEach((input)=>input.value = "")
+  textareas.forEach((text)=>text.value = "")
+  document.querySelector("input[type='submit']").value = 'submit'
+  
+}
 
 
 
