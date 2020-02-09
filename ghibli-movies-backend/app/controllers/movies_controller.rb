@@ -2,12 +2,7 @@ class MoviesController < ApplicationController
     
     def index
         movies = Movie.all
-        render json: movies.to_json(
-            :include => {
-                :characters =>{ :except => [:created_at, :updated_at] },
-                :director =>{ :except => [:created_at, :updated_at]}
-        },   :except =>[:director_id, :created_at, :updated_at]
-        )
+        render json: MovieSerializer.new(movies).to_serialized_json
     end
 
     def show
@@ -21,12 +16,7 @@ class MoviesController < ApplicationController
           movie.characters.delete_all
         end
         movie.save
-        render json: movie.to_json(
-            :include => {
-                :characters =>{ :except => [:created_at, :updated_at] },
-                :director =>{ :except => [:created_at, :updated_at]}
-        },   :except =>[:director_id, :created_at, :updated_at]
-        )
+        render json: MovieSerializer.new(movie).to_serialized_json
     end
 
     def destroy
