@@ -118,6 +118,8 @@ class Movie{
    }
 
    static deleteMovie(){
+    let result = confirm("Do you want to delete this movie?")
+    if (result){
     let configObj = {
       method: "DELETE",
       headers: {
@@ -134,9 +136,8 @@ class Movie{
      .then(resp=>alert(resp))
      .then(()=>document.getElementById(this.title).remove())
      .catch(error=>console.log(error))
-     
-     
-   }
+  }    
+  }
 }
 
 
@@ -282,7 +283,7 @@ function clearAllInputs(inputs, textareas){
   inputs.forEach((input)=>input.value = "")
   textareas.forEach((text)=>text.value = "")
   document.querySelector("input[type='submit']").value = 'submit'
-  
+
 }
 
 
