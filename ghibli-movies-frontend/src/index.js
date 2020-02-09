@@ -73,6 +73,49 @@ class Movie{
     divCard.append(button)
    }
 
+  
+   static createMovie(inputs,textareas){
+     
+      let formData = {
+        title: inputs[0].value,
+        director_id: select.value,
+        description: textareas[0].value,
+        image: inputs[1].value,
+        rt_score: inputs[2].value,
+        release_year: inputs[3].value,
+        characters_attributes:  {
+          "0": {
+            name: inputs[4].value,
+            image: inputs[5].value,
+            introduction: textareas[1].value
+          }
+        }
+      }
+
+      let configObj = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      };
+
+      fetch(`${BACKEND_URL}/movies`, configObj)
+      .then(resp=>resp.json())
+      .then(json=>{
+        let mObject = new Movie(json);
+        mObject.addMovietoPage();
+        alert("Congrats! Movie created! Scroll down to see your new movie!")
+       }
+      )
+      .catch(error=>{
+        alert("Error! Can't create a movie...");
+        console.log(error.message);
+      }
+      )
+   }
+
    static deleteMovie(){
     let configObj = {
       method: "DELETE",
@@ -227,45 +270,7 @@ form.addEventListener("submit", (e)=>{
   let textareas = form.querySelectorAll("textarea")
 
   if(!!inputs[0].value){
-
-      let formData = {
-        title: inputs[0].value,
-        director_id: select.value,
-        description: textareas[0].value,
-        image: inputs[1].value,
-        rt_score: inputs[2].value,
-        release_year: inputs[3].value,
-        characters_attributes:  {
-          "0": {
-            name: inputs[4].value,
-            image: inputs[5].value,
-            introduction: textareas[1].value
-          }
-        }
-      }
-
-      let configObj = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(formData)
-      };
-
-      fetch(`${BACKEND_URL}/movies`, configObj)
-      .then(resp=>resp.json())
-      .then(json=>{
-        let mObject = new Movie(json);
-        mObject.addMovietoPage();
-        alert("Congrats! Movie created! Scroll down to see your new movie!")
-      }
-    )
-      .catch(error=>{
-        alert("Error! Can't create a movie...");
-        console.log(error.message);
-      }
-      )
+    Movie.createMovie(inputs,textareas)
   }else{
     alert("Error...A movie must at least have a name!")
   }
