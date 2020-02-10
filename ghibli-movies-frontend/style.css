@@ -9,6 +9,7 @@ h1 {
 
 #card-area {
     padding-left: 7%;
+    flex-wrap: wrap;
 }
 
 body {
@@ -22,13 +23,12 @@ img {
    width: 400px;
    height: 600px;
    display: inline-block; 
+   max-width: 100%;
    
 }
 
 .images{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  max-width: 100%;
 }
 
 
@@ -40,11 +40,13 @@ img {
 
 .movie-card {
     display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: column;
     width: 30%;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+   
 }
 
 
@@ -156,4 +158,25 @@ input[type='button']{
 
 input:nth-of-type(5){
     margin: 1%
+}
+
+@media only screen and (max-width: 1680px) {
+.movie-card{
+  width: 50%;
+}
+  }
+
+  @media only screen and (max-width: 1680px) and (min-width: 1100px) {
+    .movie-card{
+      width: 80%;
+
+    }
+
+    iframe{
+        width: 80%;
+    }
+
+    h1{
+        font-size: 300%;
+    }
 }
