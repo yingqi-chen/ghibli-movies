@@ -49,11 +49,13 @@ Use Ctrl-C to stop
 That means the server is working now. You can visit the database by going to 
 `http://localhost:3000/movies`. 
 
-## Usage
-
-On the home page, you can set up your own user account or log in(you can also log in with your google account!) if you already have one. Also, you can go directly to user index page and event index page. 
-When you go to user index page, you can check out user's file and then see which one is the volunteer you want to comment on or look at the comment so as to approach them later for your event(but only an organization is authorized to comment on an volunteer.)
-When you go to event index page, you can check out the events or if you are an organization,you can make your own event so that people can see it from the website. 
+Once the server is ready, open the `index.html` within folder `ghibli-movies-frontend` on your browser and then you can see, create and delete movies!
 
 ## Credit
+
+I got all the movie and character information from these following websites, and also modify some of them: 
+
+1. Ghibli Wiki  https://ghibli.fandom.com/wiki/Ghibli_Wiki
+2. Disney Wiki  https://disney.fandom.com/wiki/The_Disney_Wiki
+3. Studio Ghibli API https://github.com/janaipakos/ghibliapi.git 
 
