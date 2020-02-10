@@ -74,8 +74,31 @@ class Movie{
    }
 
   
-   static createMovie(inputs,textareas){
-     
+   static createMovie(inputArray,textareas){
+       let characters_attributes = {};
+       let inputs = inputArray[0]
+       let inputsForNames = inputArray[1]
+       let inputsForImages = inputArray[2]
+
+       for (let i = 0; i< character_counter +1; i++){
+        
+           let name,image,introduction
+           name = inputsForNames[i].value
+           image = inputsForImages[i].value
+           introduction = textareas[i+1].value
+
+           console.log(name)
+
+          if (!name==""){
+          let object = {
+            name: name,
+            image: image,
+            introduction: introduction 
+          }
+          characters_attributes[i] = object
+          }
+      }
+      
       let formData = {
         title: inputs[0].value,
         director_id: select.value,
@@ -83,13 +106,7 @@ class Movie{
         image: inputs[1].value,
         rt_score: inputs[2].value,
         release_year: inputs[3].value,
-        characters_attributes:  {
-          "0": {
-            name: inputs[4].value,
-            image: inputs[5].value,
-            introduction: textareas[1].value
-          }
-        }
+        characters_attributes: characters_attributes
       }
 
       let configObj = {
@@ -269,10 +286,14 @@ button.addEventListener("click",()=>{
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
   let inputs = form.querySelectorAll("input")
+  let inputsForNames = form.getElementsByClassName("character-names")
+  let inputsForImages = form.getElementsByClassName("character-images")
+  let inputArray = [inputs,inputsForNames,inputsForImages]
   let textareas = form.querySelectorAll("textarea")
 
+
   if(!!inputs[0].value){
-    Movie.createMovie(inputs,textareas)
+    Movie.createMovie(inputArray,textareas)
   }else{
     alert("Error...A movie must at least have a name!")
   }
@@ -282,6 +303,26 @@ function clearAllInputs(inputs, textareas){
   inputs.forEach((input)=>input.value = "")
   textareas.forEach((text)=>text.value = "")
   document.querySelector("input[type='submit']").value = 'submit'
+}
+
+
+
+function addMoreCharacter(){
+  character_counter +=1
+  form.innerHTML += `
+  
+  <label class="character-name">Character name</label>
+  <input class="character-names" type="text" name="movie[characters_attributes][${character_counter}][name]" id="movie[characters_attributes][${character_counter}][name]" placeholder="A character can't be saved without a name"></br>
+    
+
+  <label>Character image</label>
+  <input class = "character-images" type="text" name="movie[characters_attributes][${character_counter}][image]" id="movie[characters_attributes][${character_counter}][image]" placeholder="Write down the URL"></br>
+
+  <label>Character introduction</label>
+  <textarea name="movie[characters_attributes][${character_counter}][introduction]" id="movie[characters_attributes][${character_counter}][introduction]"></textarea></br>
+`
+  document.getElementsByClassName("submit")[0].remove()
+  form.innerHTML +='<input class="submit" type="submit" value="submit">'
 }
 
 

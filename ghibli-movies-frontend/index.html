@@ -28,18 +28,20 @@
         <label>Release year</label>
         <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
 
+
         <label class="character-name">Character name</label>
-        <input type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]" placeholder="A character can't be saved without a name">
-        
-        <input type="button" value="Add more characters"></br>
+        <input class="character-names" type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]" placeholder="A character can't be saved without a name"></br>
+          
 
         <label>Character image</label>
-        <input type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
+        <input class = "character-images" type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
 
         <label>Character introduction</label>
         <textarea name="movie[characters_attributes][0][introduction]" id="movie[characters_attributes][0][introduction]"></textarea></br>
+
+        <input id="add-characters" type="button" value="Add more characters" onclick="addMoreCharacter()"><br>
         
-        <input type="submit" value="submit">
+        <input class="submit" type="submit" value="submit">
       </form>
 
       <div id="ghibli-video">

@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
     end
 
     def create
+        binding.pry
         movie = Movie.create(movie_params)
         if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
@@ -33,11 +34,7 @@ private
 
    def movie_params
     params.require(:movie).permit(
-        :title, :rt_score, :release_year, :description, :director_id, :image, characters_attributes: [
-            :name,
-            :image,
-            :introduction
-        ]
+        :title, :rt_score, :release_year, :description, :director_id, :image, :characters_attributes =>[:name,:image,:introduction]
       )
    end
   
