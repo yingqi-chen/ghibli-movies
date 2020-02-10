@@ -5,16 +5,15 @@ class MoviesController < ApplicationController
         render json: MovieSerializer.new(movies).to_serialized_json
     end
 
-    def show
-
-    end
 
     def create
-        binding.pry
         movie = Movie.create(movie_params)
-        if params["characters_attributes"]['0']["name"] == ""
+        binding.pry
+        if params["characters_attributes"]['0']
+          if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
           movie.characters.delete_all
+          end
         end
         movie.save
         render json: MovieSerializer.new(movie).to_serialized_json

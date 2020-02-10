@@ -47,7 +47,7 @@ Puma starting in single mode...
 Use Ctrl-C to stop
 ```
 That means the server is working now. You can visit the database by going to 
-`http://localhost:3000/`. 
+`http://localhost:3000/movies`. 
 
 ## Usage
 
