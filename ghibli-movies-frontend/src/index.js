@@ -214,7 +214,7 @@ class Character{
 
     for (const c in characters){
       let pforTargetBlock = document.createElement("p")
-      pforTargetBlock.innerText += characters[c].name
+      pforTargetBlock.innerText += (characters[c].name + " ")
       pforTargetBlock.setAttribute("class","target-block")
       
       let divForTooltip = document.createElement("div")
