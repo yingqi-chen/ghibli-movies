@@ -28,19 +28,20 @@
         <label>Release year</label>
         <input type="text" name="movie[release_year]" id="movie[release_year]"></br>
 
+        <!-- <h3>Create characters! </h3>  -->
 
         <label class="character-name">Character name</label>
         <input class="character-names" type="text" name="movie[characters_attributes][0][name]" id="movie[characters_attributes][0][name]" placeholder="A character can't be saved without a name"></br>
           
-
+     
         <label>Character image</label>
         <input class = "character-images" type="text" name="movie[characters_attributes][0][image]" id="movie[characters_attributes][0][image]" placeholder="Write down the URL"></br>
 
         <label>Character introduction</label>
         <textarea name="movie[characters_attributes][0][introduction]" id="movie[characters_attributes][0][introduction]"></textarea></br>
 
-        <input id="add-characters" type="button" value="Add more characters" onclick="addMoreCharacter()"><br>
-        
+        <br></br>
+        <input id="add-characters" type="button" value="Add more characters" onclick="addMoreCharacter()"><br> 
         <input class="submit" type="submit" value="submit">
       </form>
 

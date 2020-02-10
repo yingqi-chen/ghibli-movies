@@ -311,6 +311,7 @@ function addMoreCharacter(){
   character_counter +=1
   form.innerHTML += `
   
+  <br>
   <label class="character-name">Character name</label>
   <input class="character-names" type="text" name="movie[characters_attributes][${character_counter}][name]" id="movie[characters_attributes][${character_counter}][name]" placeholder="A character can't be saved without a name"></br>
     
@@ -320,7 +321,8 @@ function addMoreCharacter(){
 
   <label>Character introduction</label>
   <textarea name="movie[characters_attributes][${character_counter}][introduction]" id="movie[characters_attributes][${character_counter}][introduction]"></textarea></br>
-`
+  <br>
+  `
   document.getElementsByClassName("submit")[0].remove()
   form.innerHTML +='<input class="submit" type="submit" value="submit">'
 }

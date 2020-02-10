@@ -153,3 +153,7 @@ select textarea{
 input[type='button']{
     width: auto;
 }
+
+input:nth-of-type(5){
+    margin: 1%
+}
