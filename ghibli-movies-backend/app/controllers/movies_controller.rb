@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
 
     def create
         movie = Movie.create(movie_params)
-        binding.pry
         if params["characters_attributes"]['0']
           if params["characters_attributes"]['0']["name"] == ""
           Character.last.destroy
@@ -22,7 +21,7 @@ class MoviesController < ApplicationController
     def destroy
         movie = Movie.find_by id: params["id"]
         if movie
-          movie.delete
+          movie.destroy
           render plain:  "Succesfully deleted from database!"
         else
           render plain: "Cannot find this movie!"
