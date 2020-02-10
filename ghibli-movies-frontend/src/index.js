@@ -303,7 +303,7 @@ function clearAllInputs(inputs, textareas){
   inputs.forEach((input)=>input.value = "")
   textareas.forEach((text)=>text.value = "")
   document.querySelector("input[type='submit']").value = 'submit'
-  // document.querySelector("input[type='submit']").value = 'submit'
+  document.getElementById("add-characters").value = 'Add more characters'
 }
 
 
