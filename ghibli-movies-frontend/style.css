@@ -166,7 +166,7 @@ input:nth-of-type(5){
 }
   }
 
-  @media only screen and (max-width: 1680px) and (min-width: 1100px) {
+  @media only screen and (max-width: 1100px){
     .movie-card{
       width: 80%;
 
@@ -178,5 +178,14 @@ input:nth-of-type(5){
 
     h1{
         font-size: 300%;
+    }
+}
+
+@media only screen and (max-width: 1790px){
+    div#create-movie{
+        position: absolute;
+        top: 20%;
+        right: 3%;
+
     }
 }
