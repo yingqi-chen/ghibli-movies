@@ -84,27 +84,26 @@ buttonForSorting.addEventListener("click", function(){
   fetch(`${BACKEND_URL}/movies`)
   .then(resp=>resp.json())
   .then((array)=>{
-    array.sort(function(a, b) {
-    var nameA = a.title.toUpperCase(); 
-    var nameB = b.title.toUpperCase(); 
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    return 0;
-  })
+  array.sort(sorting)
   cardArea.innerHTML=""
   array.forEach((movie)=>{
     let mObject = new Movie(movie);
     mObject.addMovietoPage()
-  }
-   
-  )
+  })
 })
+})
+
+function sorting(a, b) {
+  let nameA = a.title.toUpperCase(); 
+  let nameB = b.title.toUpperCase(); 
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  return 0;
 }
-)
 
 
 
