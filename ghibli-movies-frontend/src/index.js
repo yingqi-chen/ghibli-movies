@@ -79,6 +79,33 @@ function addMoreCharacter(){
   form.innerHTML +='<input class="submit" type="submit" value="submit">'
 }
 
+let buttonForSorting = document.getElementById("sort-button")
+buttonForSorting.addEventListener("click", function(){
+  fetch(`${BACKEND_URL}/movies`)
+  .then(resp=>resp.json())
+  .then((array)=>{
+    array.sort(function(a, b) {
+    var nameA = a.title.toUpperCase(); 
+    var nameB = b.title.toUpperCase(); 
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  })
+  cardArea.innerHTML=""
+  array.forEach((movie)=>{
+    let mObject = new Movie(movie);
+    mObject.addMovietoPage()
+  }
+   
+  )
+})
+}
+)
+
 
 
 
